@@ -6,7 +6,8 @@ public class Task {
     // Описание задачи
     protected  String description;
     //Статус задачи(NEW, IN_PROGERSS, DONE)
-    protected String status;
+
+    Status status = Status.NEW;
 
 
     //Конструктор задачи
@@ -15,7 +16,7 @@ public class Task {
         this.title = title;
         this.description = description;
         //Устанавливаем начальный статус задачи как NEW
-        this.status = "NEW";
+        this.status=Status.NEW;
     }
 
     public int getId(){return id;}
@@ -30,7 +31,9 @@ public class Task {
 
     public void  setDescription(){this.description = description;}
 
-    public String getStatus(){return status;}
+    public Status getStatus(){return status;}
 
-    public void setStatus(String done){this.status = status;}
+    public void setStatus(Status status){
+        this.status =status;
+    }
 }

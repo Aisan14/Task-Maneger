@@ -34,12 +34,12 @@ public class Test {
         System.out.println("Изначальный статус эпика: " + firstEpic.getStatus());
 
         // Меняем статус подзадачи на IN_PROGRESS
-        firstEpicFirstSubtask.setStatus("IN_PROGRESS");
+        firstEpicFirstSubtask.setStatus(Status.IN_PROGRESS);
         System.out.println("Статус эпика после изменения статуса подзадачи: " + firstEpic.getStatus());
 
         // Меняем статус обеих подзадач на DONE
-        firstEpicFirstSubtask.setStatus("DONE");
-        firstEpicSecondSubtask.setStatus("DONE");
+        firstEpicFirstSubtask.setStatus(Status.DONE);
+        firstEpicSecondSubtask.setStatus(Status.DONE);
         System.out.println("Статус эпика после изменения статуса всех подзадач на \"DONE\": " + firstEpic.getStatus());
 
         // Удаляем одну из задач и один из эпиков

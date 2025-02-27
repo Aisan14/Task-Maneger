@@ -22,11 +22,11 @@ public class Epic extends  Task{
         //Проходим по всем подзадачам эпика
         for(Subtask subtask : subtasks.values()){
             //Проверяем не является ли подзадача NEW
-            if(!subtask.getStatus().equals("NEW")){
+            if(subtask.getStatus() !=Status.NEW){
                 allNew = false;
             }
             //Проверяем не является ли подзадача DONE
-            if(!subtask.getStatus().equals("DONE")){
+            if(subtask.getStatus() !=Status.DONE){
                 allDone = false;
             }
             //Если уже известно, что не все подзадачи в одном статусе, прерываем цикл
@@ -36,12 +36,12 @@ public class Epic extends  Task{
         }
 
         //Определяем статус эпика на основе статусов подзадач
-        if(subtasks.isEmpty() || allNew){
-            setStatus("NEW");
+        if (subtasks.isEmpty() || allNew) {
+            setStatus(Status.NEW);
         } else if (allDone) {
-            setStatus("DONE");
-        }  else{
-            setStatus("IN_PROGRESS");
+            setStatus(Status.DONE);
+        } else {
+            setStatus(Status.IN_PROGRESS);
         }
     }
 
